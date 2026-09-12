@@ -10,7 +10,7 @@ This project entails redesigning and modernizing the studio's primary web portal
 4. Highlighting **only four core flagship studio products**:
    - **MacMint** (macOS Utility / Productivity — `getmacMint.store`)
    - **TopBump** (Growth & Community Platform — `topbump.lol`)
-   - **DotMesh** (Mobile Strategy Game — iOS, Android & Web)
+   - **DotMesh** (Mobile Strategy Game — iOS & Android)
    - **TinyOrbit URL** (Developer / SaaS Link Management — `tiny-orbit-url.vercel.app`)
 5. Interactive product cards with "Learn More" / "Explore Product" actions that navigate to dedicated, comprehensive showcase pages for each product (`macmint.html`, `topbump.html`, `dotmesh.html`, `tinyorbiturl.html`).
 6. Zero build friction: 100% static hosting compatibility on **GitHub Pages** (via custom domain `legendprixai.lol` / `alokrathaur.github.io`).
@@ -35,7 +35,7 @@ From the Brand Identity Reference (`Brand Identity Presentation-LegendPrix.png`)
 | :--- | :--- | :--- | :--- | :--- |
 | **MacMint** | macOS Utility / System Optimization | `https://getmacMint.store` | `/macmint.html` (and `/macmint/`) | Smart cleanup, memory boost, app uninstaller, disk visualizer, native swift performance. |
 | **TopBump** | SaaS / Community Visibility Platform | `https://topbump.lol` | `/topbump.html` (and `/topbump/`) | Community discovery, server bumping, real-time leaderboard, algorithmic engagement booster. |
-| **DotMesh** | Mobile Strategy Game (iOS, Android & Web) | [App Store](https://apps.apple.com/in/app/dotmesh-dots-boxes-game/id6761758144), [Google Play](https://play.google.com/store/apps/details?id=com.legendprixai.dotmesh&hl=en_IN) & [Web](https://alokrathaur.github.io/DotMesh-Pro/) | `/dotmesh.html` (and `/dotmesh/`) | Reimagined Dots & Boxes, 2-4P local multiplayer, smart AI bots, neon cyber visual themes. |
+| **DotMesh** | Mobile Strategy Game (iOS & Android) | [App Store](https://apps.apple.com/in/app/dotmesh-dots-boxes-game/id6761758144) & [Google Play](https://play.google.com/store/apps/details?id=com.legendprixai.dotmesh&hl=en_IN) | `/dotmesh.html` (and `/dotmesh/`) | Reimagined Dots & Boxes, 2-4P local multiplayer, smart AI bots, neon cyber visual themes. |
 | **TinyOrbit URL** | Developer & Marketing SaaS | `https://tiny-orbit-url.vercel.app/` | `/tinyorbiturl.html` (and `/tinyorbiturl/`) | Instant link shortener, custom aliases, QR code engine, geo & device analytics tracking. |
 
 ---
