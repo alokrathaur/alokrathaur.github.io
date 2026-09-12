@@ -35,7 +35,7 @@ From the Brand Identity Reference (`Brand Identity Presentation-LegendPrix.png`)
 | :--- | :--- | :--- | :--- | :--- |
 | **MacMint** | macOS Utility / System Optimization | `https://getmacMint.store` | `/macmint.html` (and `/macmint/`) | Smart cleanup, memory boost, app uninstaller, disk visualizer, native swift performance. |
 | **TopBump** | SaaS / Community Visibility Platform | `https://topbump.lol` | `/topbump.html` (and `/topbump/`) | Community discovery, server bumping, real-time leaderboard, algorithmic engagement booster. |
-| **DotMesh** | Mobile Strategy Game (iOS, Android & Web) | App Store & `https://alokrathaur.github.io/DotMesh-Pro/` | `/dotmesh.html` (and `/dotmesh/`) | Reimagined Dots & Boxes, 2-4P local multiplayer, smart AI bots, neon cyber visual themes. |
+| **DotMesh** | Mobile Strategy Game (iOS, Android & Web) | [App Store](https://apps.apple.com/in/app/dotmesh-dots-boxes-game/id6761758144), [Google Play](https://play.google.com/store/apps/details?id=com.legendprixai.dotmesh&hl=en_IN) & [Web](https://alokrathaur.github.io/DotMesh-Pro/) | `/dotmesh.html` (and `/dotmesh/`) | Reimagined Dots & Boxes, 2-4P local multiplayer, smart AI bots, neon cyber visual themes. |
 | **TinyOrbit URL** | Developer & Marketing SaaS | `https://tiny-orbit-url.vercel.app/` | `/tinyorbiturl.html` (and `/tinyorbiturl/`) | Instant link shortener, custom aliases, QR code engine, geo & device analytics tracking. |
 
 ---
