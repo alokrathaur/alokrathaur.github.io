@@ -1,905 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LegendPrix AI — Building Legendary Products</title>
-<meta name="description" content="LegendPrix AI is an independent studio crafting exceptional mobile games and SaaS products. Creators of DotMesh and TinyOrbit URL.">
-<meta property="og:title" content="LegendPrix AI">
-<meta property="og:description" content="Crafting exceptional mobile games and SaaS products.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Bebas+Neue&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LegendPrix AI — Ideas into Products</title>
+  <meta name="description" content="LegendPrix AI is an independent product studio for a brighter digital world. Creators of MacMint, DotMesh, TinyOrbit URL, and TopBump.">
+  <meta property="og:title" content="LegendPrix AI — Ideas into Products">
+  <meta property="og:description" content="A product studio engineering world-class Web Apps, Mobile Apps, and SaaS Platforms.">
+  <meta property="og:image" content="Brand Identity Presentation-LegendPrix.png">
+  <link rel="icon" type="image/png" href="Logo.png">
 
-:root {
-  --bg:           #05050A;
-  --bg-card:      #0D0D1A;
-  --bg-card-2:    #0A0A16;
-  --gold:         #C9A84C;
-  --gold-light:   #EAC85C;
-  --gold-dim:     rgba(201,168,76,0.09);
-  --gold-border:  rgba(201,168,76,0.22);
-  --pink:         #E844A8;
-  --pink-dim:     rgba(232,68,168,0.08);
-  --teal:         #1DCFBD;
-  --teal-dim:     rgba(29,207,189,0.08);
-  --white:        #EDE8E3;
-  --white-60:     rgba(237,232,227,0.6);
-  --white-35:     rgba(237,232,227,0.35);
-  --white-12:     rgba(237,232,227,0.12);
-  --white-04:     rgba(237,232,227,0.04);
-  --radius-lg:    22px;
-  --radius-sm:    10px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: 'Raleway', sans-serif;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-/* Grain overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.028;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-/* ─── CANVAS ─── */
-#cosmos {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-nav, main, footer, section { position: relative; z-index: 1; }
-
-/* ─── NAV ─── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 52px;
-  background: rgba(5,5,10,0.75);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(201,168,76,0.07);
-  transition: padding 0.3s;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.nav-emblem { width: 38px; height: 38px; flex-shrink: 0; }
-
-.nav-brand {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  color: var(--white);
-}
-.nav-brand em { font-style: normal; color: var(--gold); }
-
-.nav-dev {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--white-35);
-  text-decoration: none;
-  border: 1px solid transparent;
-  padding: 7px 14px;
-  border-radius: 100px;
-  transition: color 0.3s, border-color 0.3s;
-}
-.nav-dev:hover { color: var(--gold); border-color: var(--gold-border); }
-
-/* ─── HERO ─── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 140px 24px 100px;
-  position: relative;
-}
-
-.hero-radial {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(ellipse at center, rgba(201,168,76,0.055) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 7px 18px 7px 12px;
-  border: 1px solid var(--gold-border);
-  border-radius: 100px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-dim);
-  margin-bottom: 52px;
-  opacity: 0;
-  animation: fadeSlideDown 0.9s 0.1s cubic-bezier(.22,.68,0,1.2) forwards;
-}
-
-.badge-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  animation: blink 2.4s ease infinite;
-}
-
-@keyframes blink {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(0.65); }
-}
-
-.hero-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(80px, 15vw, 200px);
-  line-height: 0.86;
-  letter-spacing: 0.015em;
-  margin-bottom: 36px;
-  opacity: 0;
-  animation: fadeSlideUp 0.9s 0.25s cubic-bezier(.22,.68,0,1.1) forwards;
-}
-.title-legend { display: block; color: var(--white); }
-.title-prix {
-  display: block;
-  background: linear-gradient(130deg, #A8801E 0%, #E8C85A 35%, #F5D97A 55%, #C9A84C 80%, #8A6820 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.title-ai {
-  display: block;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.18em;
-  letter-spacing: 0.5em;
-  font-weight: 400;
-  color: var(--white-35);
-  -webkit-text-fill-color: var(--white-35);
-  margin-top: 6px;
-  text-indent: 0.5em;
-}
-
-.hero-sub {
-  font-size: clamp(15px, 1.8vw, 19px);
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--white-60);
-  max-width: 480px;
-  margin-bottom: 72px;
-  opacity: 0;
-  animation: fadeSlideUp 0.9s 0.4s cubic-bezier(.22,.68,0,1.1) forwards;
-}
-
-.hero-scroll {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  opacity: 0;
-  animation: fadeIn 1s 0.7s ease forwards;
-}
-.hero-scroll-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--white-35);
-  transition: color 0.3s;
-}
-.hero-scroll:hover .hero-scroll-label { color: var(--gold); }
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--gold-border), transparent);
-  animation: scrollDown 2s ease infinite;
-}
-@keyframes scrollDown {
-  0%,100% { opacity: 0.4; transform: scaleY(1) translateY(0); }
-  50% { opacity: 1; transform: scaleY(1.2) translateY(3px); }
-}
-
-/* ─── PRODUCTS ─── */
-.products {
-  padding: 130px 52px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.section-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 18px;
-}
-.eyebrow-line {
-  width: 32px; height: 1px;
-  background: var(--gold);
-  opacity: 0.5;
-}
-.eyebrow-text {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.section-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(44px, 7vw, 90px);
-  letter-spacing: 0.04em;
-  color: var(--white);
-  margin-bottom: 80px;
-  line-height: 1;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-/* ─── PRODUCT CARD ─── */
-.product-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.05);
-  background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
-  overflow: hidden;
-  transition: transform 0.45s cubic-bezier(.22,.68,0,1.1), border-color 0.4s ease, box-shadow 0.4s ease;
-}
-.product-card:hover { transform: translateY(-8px); }
-.card-dotmesh:hover {
-  border-color: rgba(232,68,168,0.28);
-  box-shadow: 0 30px 80px rgba(232,68,168,0.08), 0 0 0 1px rgba(232,68,168,0.1);
-}
-.card-tinyorbit:hover {
-  border-color: rgba(29,207,189,0.28);
-  box-shadow: 0 30px 80px rgba(29,207,189,0.07), 0 0 0 1px rgba(29,207,189,0.1);
-}
-
-.card-ambient {
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 360px; height: 360px;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-.product-card:hover .card-ambient { opacity: 1; }
-.ambient-game { background: radial-gradient(circle, rgba(232,68,168,0.18) 0%, transparent 65%); }
-.ambient-saas { background: radial-gradient(circle, rgba(29,207,189,0.14) 0%, transparent 65%); }
-
-/* Coming soon ribbon */
-.coming-badge {
-  position: absolute;
-  top: 22px; right: 22px;
-  padding: 5px 13px;
-  border-radius: 100px;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  background: rgba(29,207,189,0.1);
-  border: 1px solid rgba(29,207,189,0.28);
-  color: var(--teal);
-  z-index: 5;
-}
-
-.card-inner {
-  padding: 42px;
-  position: relative;
-  z-index: 2;
-}
-
-/* App icon */
-.app-icon {
-  width: 76px; height: 76px;
-  border-radius: 18px;
-  overflow: hidden;
-  margin-bottom: 26px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-  flex-shrink: 0;
-}
-.app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* Category pill */
-.category-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 11px;
-  border-radius: 7px;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-.pill-game { background: var(--pink-dim); color: var(--pink); border: 1px solid rgba(232,68,168,0.18); }
-.pill-saas { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(29,207,189,0.18); }
-.pill-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-
-.card-name {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 27px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--white);
-  margin-bottom: 5px;
-}
-.card-tagline {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white-35);
-  margin-bottom: 22px;
-}
-.card-desc {
-  font-size: 14.5px;
-  line-height: 1.8;
-  color: var(--white-60);
-  font-weight: 300;
-  margin-bottom: 26px;
-}
-
-.feature-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  padding: 18px 20px;
-  background: var(--white-04);
-  border-radius: 13px;
-  border: 1px solid rgba(255,255,255,0.04);
-  margin-bottom: 30px;
-}
-.feature-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12.5px;
-  color: var(--white-60);
-  font-weight: 400;
-}
-.feature-list li::before {
-  content: '';
-  display: block;
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.card-dotmesh .feature-list li::before { background: var(--pink); box-shadow: 0 0 6px var(--pink); }
-.card-tinyorbit .feature-list li::before { background: var(--teal); box-shadow: 0 0 6px var(--teal); }
-
-.card-actions { display: flex; gap: 11px; flex-wrap: wrap; align-items: center; }
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 12px 20px;
-  border-radius: var(--radius-sm);
-  font-family: 'Raleway', sans-serif;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s cubic-bezier(.22,.68,0,1.2);
-  white-space: nowrap;
-}
-.btn-apple {
-  background: #fff;
-  color: #000;
-}
-.btn-apple:hover {
-  background: #F2F0EC;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(255,255,255,0.18);
-}
-.btn-ghost {
-  background: transparent;
-  color: var(--white-60);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.btn-ghost:hover {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.28);
-  transform: translateY(-2px);
-}
-.btn-disabled {
-  background: var(--white-04);
-  color: var(--white-35);
-  border: 1px solid rgba(255,255,255,0.05);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* ─── ABOUT STRIP ─── */
-.about-strip {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 52px 130px;
-}
-.about-inner {
-  padding: 52px 56px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--gold-border);
-  background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
-  display: flex;
-  align-items: center;
-  gap: 48px;
-}
-.about-emblem {
-  flex-shrink: 0;
-}
-.about-emblem svg { width: 64px; height: 64px; }
-.about-content { flex: 1; }
-.about-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-.about-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  margin-bottom: 12px;
-}
-.about-body {
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--white-60);
-  font-weight: 300;
-  max-width: 580px;
-}
-.about-link {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
-  border-radius: var(--radius-sm);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--gold);
-  border: 1px solid var(--gold-border);
-  background: var(--gold-dim);
-  transition: all 0.3s;
-}
-.about-link:hover {
-  background: rgba(201,168,76,0.15);
-  box-shadow: 0 8px 24px rgba(201,168,76,0.1);
-  transform: translateY(-2px);
-}
-
-/* ─── FOOTER ─── */
-footer {
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 60px 52px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  text-align: center;
-}
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--white);
-  margin-bottom: 4px;
-}
-.footer-logo em { font-style: normal; color: var(--gold); }
-.footer-tagline {
-  font-size: 13px;
-  color: var(--white-35);
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.04em;
-}
-.footer-sep {
-  width: 36px; height: 1px;
-  background: var(--gold-border);
-  margin: 6px 0;
-}
-.footer-credit {
-  font-size: 12.5px;
-  color: var(--white-35);
-}
-.footer-credit a {
-  color: var(--gold);
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-.footer-credit a:hover { opacity: 0.65; }
-.footer-copy {
-  font-size: 11px;
-  color: rgba(237,232,227,0.18);
-  letter-spacing: 0.08em;
-}
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(-24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(32px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-}
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-d1 { transition-delay: 0.08s; }
-.reveal-d2 { transition-delay: 0.18s; }
-.reveal-d3 { transition-delay: 0.28s; }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 960px) {
-  nav { padding: 18px 28px; }
-  .products, .about-strip { padding-left: 28px; padding-right: 28px; }
-  .products-grid { grid-template-columns: 1fr; }
-  .about-inner { flex-direction: column; text-align: center; gap: 28px; }
-  .about-emblem { margin: 0 auto; }
-  .about-body { max-width: 100%; }
-  footer { padding: 48px 28px; }
-}
-@media (max-width: 600px) {
-  .products { padding-top: 80px; padding-bottom: 80px; }
-  .card-inner { padding: 28px; }
-  .hero-title { font-size: clamp(72px, 20vw, 120px); }
-  .btn { padding: 11px 17px; font-size: 12px; }
-  .nav-dev { display: none; }
-}
-</style>
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Particle canvas -->
-<canvas id="cosmos"></canvas>
+  <!-- 3D Space & Interactive Solar System Background -->
+  <div id="space-container"></div>
+  <div class="cosmic-radial-glow"></div>
 
-<!-- ─────────────────── NAV ─────────────────── -->
-<nav>
-  <a href="#" class="nav-logo">
-    <svg class="nav-emblem" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="19,2 34,10.5 34,27.5 19,36 4,27.5 4,10.5"
-        fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
-      <polygon points="19,7 30,13.5 30,24.5 19,31 8,24.5 8,13.5"
-        fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.3" stroke-linejoin="round"/>
-      <text x="19" y="20" font-family="Orbitron,sans-serif" font-size="9.5"
-        font-weight="700" fill="#C9A84C" text-anchor="middle" dominant-baseline="central"
-        letter-spacing="1.5">LP</text>
-    </svg>
-    <span class="nav-brand">LegendPrix <em>AI</em></span>
-  </a>
-  <a href="https://alokrathaur.github.io/portfolio" class="nav-dev" target="_blank" rel="noopener">
-    Alok Kumar Rathaur ↗
-  </a>
-</nav>
+  <!-- Studio Navigation -->
+  <nav class="studio-nav">
+    <a href="#" class="nav-brand-group">
+      <img src="Logo.png" alt="LegendPrix AI Logo" class="brand-emblem-img">
+      <div class="brand-title-wrap">
+        <span class="brand-title">
+          LegendPrix <span class="brand-ai-badge">AI</span>
+        </span>
+        <span class="brand-subtitle">Ideas into Products</span>
+      </div>
+    </a>
 
-<!-- ─────────────────── HERO ─────────────────── -->
-<section class="hero">
-  <div class="hero-radial"></div>
+    <ul class="nav-links">
+      <li><a href="#products" class="nav-link">Flagship Suite</a></li>
+      <li><a href="#pillars" class="nav-link">Studio Pillars</a></li>
+      <li><a href="#about" class="nav-link">About Studio</a></li>
+      <li><a href="https://alokrathaur.github.io/portfolio" target="_blank" rel="noopener" class="nav-link">Developer ↗</a></li>
+    </ul>
 
-  <div class="hero-badge">
-    <div class="badge-dot"></div>
-    Crafting Legendary Digital Experiences
-  </div>
+    <a href="#products" class="nav-cta">
+      <span>Explore Suite</span>
+      <span>↓</span>
+    </a>
+  </nav>
 
-  <h1 class="hero-title">
-    <span class="title-legend">Legend</span>
-    <span class="title-prix">Prix</span>
-    <span class="title-ai">AI</span>
-  </h1>
-
-  <p class="hero-sub">
-    An independent studio building exceptional mobile games and SaaS products that set new standards.
-  </p>
-
-  <a href="#products" class="hero-scroll">
-    <span class="hero-scroll-label">Our Products</span>
-    <div class="scroll-line"></div>
-  </a>
-</section>
-
-<!-- ─────────────────── PRODUCTS ─────────────────── -->
-<section class="products" id="products">
-  <div class="reveal">
-    <div class="section-eyebrow">
-      <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Portfolio</span>
-    </div>
-    <h2 class="section-title">Our Products</h2>
-  </div>
-
-  <div class="products-grid">
-
-    <!-- DOTMESH -->
-    <article class="product-card card-dotmesh reveal reveal-d1">
-      <div class="card-ambient ambient-game"></div>
-      <div class="card-inner">
-        <div class="app-icon">
-          <img src="images/dotmesh-logo.png" alt="DotMesh App Icon">
+  <!-- Hero Section with Solar System & Realistic Earth -->
+  <header class="hero-section">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Independent Product Studio • 2026</span>
         </div>
-        <div class="category-pill pill-game">
-          <span class="pill-dot"></span>
-          Mobile Game
-        </div>
-        <h3 class="card-name">DotMesh</h3>
-        <p class="card-tagline">Dots &amp; Boxes — Reimagined</p>
-        <p class="card-desc">
-          A stunning reimagining of the classic Dots &amp; Boxes strategy game.
-          Battle friends locally, challenge intelligent AI bots, or jump into live online
-          matches — all wrapped in neon-drenched visuals that glow.
+
+        <h1 class="hero-headline">
+          LegendPrix AI<br>
+          <span class="headline-gradient">Ideas into Products.</span>
+        </h1>
+
+        <p class="hero-subheadline">
+          A product studio for a brighter digital world. We engineer world-class Web Apps, Mobile Apps, and SaaS Platforms designed for elegance, speed, and real-world impact.
         </p>
-        <ul class="feature-list">
-          <li>Local Multiplayer — 2P, 3P &amp; 4P</li>
-          <li>AI Bot with Smart Difficulty Levels</li>
-          <li>Live Online Play via Invite Code</li>
-          <li>Stunning Neon Visual Themes</li>
-        </ul>
-        <div class="card-actions">
-          <a href="https://apps.apple.com/in/app/dotmesh-dots-boxes-game/id6761758144"
-             class="btn btn-apple" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-            </svg>
-            App Store
+
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-cyan">
+            Explore Flagship Suite ↓
           </a>
-          <a href="https://alokrathaur.github.io/DotMesh-Pro/"
-             class="btn btn-ghost" target="_blank" rel="noopener">
-            Website →
+          <a href="#pillars" class="btn btn-outline">
+            Studio Methodology
           </a>
         </div>
       </div>
-    </article>
-
-    <!-- TINYORBIT URL -->
-    <article class="product-card card-tinyorbit reveal reveal-d2">
-      <div class="card-ambient ambient-saas"></div>
-      <div class="card-inner">
-        <div class="app-icon">
-          <img src="images/tinyorbiturl-logo.png" alt="TinyOrbit URL App Icon">
-        </div>
-        <div class="category-pill pill-saas">
-          <span class="pill-dot"></span>
-          SaaS Product
-        </div>
-        <h3 class="card-name">Tiny Orbit URL</h3>
-        <p class="card-tagline">Smart URL Shortener</p>
-        <p class="card-desc">
-          A powerful URL shortening platform built for developers and marketers.
-          Generate branded short links, create QR codes instantly, and gain deep
-          insight through click analytics and tracking.
-        </p>
-        <ul class="feature-list">
-          <li>Custom Short Aliases</li>
-          <li>QR Code Generation</li>
-          <li>Click Analytics &amp; Tracking</li>
-          <li>Fast &amp; Reliable Infrastructure</li>
-        </ul>
-        <div class="card-actions">
-          <a href="https://tiny-orbit-url.vercel.app/"
-             class="btn btn-ghost" target="_blank" rel="noopener">
-            Website →
-          </a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ─────────────────── ABOUT STRIP ─────────────────── -->
-<div class="about-strip">
-  <div class="about-inner reveal reveal-d1">
-    <div class="about-emblem">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="32,4 58,18 58,46 32,60 6,46 6,18"
-          fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
-        <polygon points="32,12 52,23 52,41 32,52 12,41 12,23"
-          fill="none" stroke="#C9A84C" stroke-width="0.7" opacity="0.35" stroke-linejoin="round"/>
-        <text x="32" y="33" font-family="Orbitron,sans-serif" font-size="16"
-          font-weight="700" fill="#C9A84C" text-anchor="middle" dominant-baseline="central"
-          letter-spacing="2">LP</text>
-      </svg>
     </div>
-    <div class="about-content">
-      <p class="about-label">The Studio</p>
-      <h3 class="about-title">LegendPrix AI</h3>
-      <p class="about-body">
-        LegendPrix AI is an independent studio on a mission to build products that blend
-        craftsmanship with ambition. From mobile games with depth to SaaS tools with purpose —
-        every product we ship is designed to be legendary.
+  </header>
+
+  <!-- Studio Pillars (Brand Presentation Reference) -->
+  <section class="pillars-section" id="pillars">
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-number">01 / PILLAR</div>
+        <h3 class="pillar-title">IDEA</h3>
+        <p class="pillar-desc">Uncovering high-friction pain points and turning bold concepts into verified product architectures.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">02 / PILLAR</div>
+        <h3 class="pillar-title">BUILD</h3>
+        <p class="pillar-desc">Rapid, uncompromising engineering with modern frameworks, native swift power, and robust cloud scale.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">03 / PILLAR</div>
+        <h3 class="pillar-title">PRODUCT</h3>
+        <p class="pillar-desc">Obsessing over micro-interactions, intuitive user journeys, and tactile interfaces that inspire delight.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">04 / PILLAR</div>
+        <h3 class="pillar-title">GROWTH</h3>
+        <p class="pillar-desc">Data-driven distribution, frictionless onboarding, and compounding adoption loops that win markets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship Suite Section (Order: 1. MacMint, 2. DotMesh, 3. TinyOrbit URL, 4. TopBump) -->
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <span class="section-tag">Studio Portfolio</span>
+      <h2 class="section-heading">Flagship Studio Products</h2>
+      <p class="section-subheading">
+        Explore our four core creations. Tap any product to view its dedicated architectural overview and feature breakdown.
       </p>
     </div>
-    <a href="https://alokrathaur.github.io/portfolio" class="about-link" target="_blank" rel="noopener">
-      Meet the Developer ↗
-    </a>
-  </div>
-</div>
 
-<!-- ─────────────────── FOOTER ─────────────────── -->
-<footer>
-  <div class="footer-logo">
-    <svg width="26" height="26" viewBox="0 0 38 38" fill="none">
-      <polygon points="19,2 34,10.5 34,27.5 19,36 4,27.5 4,10.5"
-        fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
-      <text x="19" y="20" font-family="Orbitron,sans-serif" font-size="9.5"
-        font-weight="700" fill="#C9A84C" text-anchor="middle" dominant-baseline="central"
-        letter-spacing="1.5">LP</text>
-    </svg>
-    LegendPrix <em>AI</em>
-  </div>
-  <p class="footer-tagline">Building legendary products, one ship at a time.</p>
-  <div class="footer-sep"></div>
-  <p class="footer-credit">
-    Crafted by
-    <a href="https://alokrathaur.github.io/portfolio" target="_blank" rel="noopener">Alok Kumar Rathaur</a>
-  </p>
-  <p class="footer-copy">© 2025 LegendPrix AI. All rights reserved.</p>
-</footer>
+    <div class="products-grid">
 
-<script>
-/* ── CANVAS PARTICLE MESH ── */
-(function () {
-  const canvas = document.getElementById('cosmos');
-  const ctx    = canvas.getContext('2d');
-  let W, H, pts = [];
+      <!-- 1. MacMint -->
+      <article class="product-card" onclick="location.href='macmint.html'" style="cursor: pointer;">
+        <div class="product-card-top">
+          <div class="app-icon-wrap">
+            <img src="images/macmint-logo.png" alt="MacMint Icon">
+          </div>
+          <span class="category-chip chip-macmint">macOS Utility</span>
+        </div>
 
-  const N        = 70;
-  const MAX_DIST = 145;
-  const GOLD     = [201, 168, 76];
-  const CYAN     = [29,  207, 189];
+        <h3 class="product-name">MacMint</h3>
+        <p class="product-tagline">Fresh, Fast &amp; Clean Mac Performance</p>
+        <p class="product-desc">
+          An ultra-fast native macOS utility designed to liberate disk space, manage background cache, monitor live system metrics, and keep your Mac running with fresh speed.
+        </p>
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
+        <ul class="product-features-list">
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Smart Junk Cleanup
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            RAM &amp; Storage Visualizer
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Native Swift Architecture
+          </li>
+        </ul>
 
-  function Particle() {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.35;
-    this.vy = (Math.random() - 0.5) * 0.35;
-    this.r  = Math.random() * 1.2 + 0.4;
-    this.a  = Math.random() * 0.4 + 0.15;
-    this.c  = Math.random() > 0.75 ? CYAN : GOLD;
-  }
+        <div class="card-actions-row" onclick="event.stopPropagation();">
+          <a href="macmint.html" class="btn btn-outline btn-sm">
+            Learn More →
+          </a>
+          <a href="https://getmacmint.store" target="_blank" rel="noopener" class="btn btn-cyan btn-sm">
+            Visit getmacMint.store ↗
+          </a>
+        </div>
+      </article>
 
-  Particle.prototype.tick = function () {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < -20) this.x = W + 20;
-    if (this.x > W + 20) this.x = -20;
-    if (this.y < -20) this.y = H + 20;
-    if (this.y > H + 20) this.y = -20;
-  };
+      <!-- 2. DotMesh -->
+      <article class="product-card" onclick="location.href='dotmesh.html'" style="cursor: pointer;">
+        <div class="product-card-top">
+          <div class="app-icon-wrap">
+            <img src="images/dotmesh-logo.png" alt="DotMesh Icon">
+          </div>
+          <span class="category-chip chip-dotmesh">Mobile Strategy Game</span>
+        </div>
 
-  Particle.prototype.draw = function () {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(' + this.c + ',' + this.a + ')';
-    ctx.fill();
-  };
+        <h3 class="product-name">DotMesh</h3>
+        <p class="product-tagline">Dots &amp; Boxes — Reimagined for iOS &amp; Web</p>
+        <p class="product-desc">
+          A neon-infused tactical board game reimagining classic territory capture. Battle friends in local pass-and-play, challenge smart bot AI, or join live online matches.
+        </p>
 
-  function init() {
-    pts = [];
-    for (var i = 0; i < N; i++) pts.push(new Particle());
-  }
+        <ul class="product-features-list">
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Local Multiplayer (2P–4P)
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Adaptive AI Difficulty
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Vibrant Cyber Themes
+          </li>
+        </ul>
 
-  function drawEdges() {
-    for (var i = 0; i < pts.length; i++) {
-      for (var j = i + 1; j < pts.length; j++) {
-        var dx = pts[i].x - pts[j].x;
-        var dy = pts[i].y - pts[j].y;
-        var d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < MAX_DIST) {
-          var a = (1 - d / MAX_DIST) * 0.1;
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = 'rgba(' + GOLD + ',' + a + ')';
-          ctx.lineWidth   = 0.6;
-          ctx.stroke();
-        }
-      }
-    }
-  }
+        <div class="card-actions-row" onclick="event.stopPropagation();">
+          <a href="dotmesh.html" class="btn btn-outline btn-sm">
+            Learn More →
+          </a>
+          <a href="https://apps.apple.com/in/app/dotmesh-dots-boxes-game/id6761758144" target="_blank" rel="noopener" class="btn btn-cyan btn-sm">
+            App Store ↗
+          </a>
+        </div>
+      </article>
 
-  function loop() {
-    ctx.clearRect(0, 0, W, H);
-    pts.forEach(function (p) { p.tick(); p.draw(); });
-    drawEdges();
-    requestAnimationFrame(loop);
-  }
+      <!-- 3. TinyOrbit URL -->
+      <article class="product-card" onclick="location.href='tinyorbiturl.html'" style="cursor: pointer;">
+        <div class="product-card-top">
+          <div class="app-icon-wrap">
+            <img src="images/tinyorbiturl-logo.png" alt="TinyOrbit URL Icon">
+          </div>
+          <span class="category-chip chip-tinyorbit">Developer SaaS</span>
+        </div>
 
-  resize();
-  init();
-  loop();
-  window.addEventListener('resize', function () { resize(); init(); });
-}());
+        <h3 class="product-name">Tiny Orbit URL</h3>
+        <p class="product-tagline">Smart URL Shortener &amp; QR Telemetry</p>
+        <p class="product-desc">
+          A high-performance link management infrastructure built for developers and marketers. Generate customized short links, instant QR codes, and granular analytics.
+        </p>
 
-/* ── SCROLL REVEAL ── */
-(function () {
-  var els = document.querySelectorAll('.reveal');
-  var io  = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  els.forEach(function (el) { io.observe(el); });
-}());
-</script>
+        <ul class="product-features-list">
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Custom Short Aliases
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Instant QR Generator
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Real-Time Click Telemetry
+          </li>
+        </ul>
+
+        <div class="card-actions-row" onclick="event.stopPropagation();">
+          <a href="tinyorbiturl.html" class="btn btn-outline btn-sm">
+            Learn More →
+          </a>
+          <a href="https://tiny-orbit-url.vercel.app/" target="_blank" rel="noopener" class="btn btn-cyan btn-sm">
+            Launch Web App ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- 4. TopBump (Placed at 4th Place as Requested) -->
+      <article class="product-card" onclick="location.href='topbump.html'" style="cursor: pointer;">
+        <div class="product-card-top">
+          <div class="app-icon-wrap">
+            <img src="images/topbump-logo.png" alt="TopBump Icon">
+          </div>
+          <span class="category-chip chip-topbump">Growth Platform</span>
+        </div>
+
+        <h3 class="product-name">TopBump</h3>
+        <p class="product-tagline">Algorithmic Community Discovery &amp; Bumping</p>
+        <p class="product-desc">
+          The premier community acceleration platform built to drive organic exposure, real-time leaderboard ranking, and engagement for servers and digital communities.
+        </p>
+
+        <ul class="product-features-list">
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Automated Server Bumping
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Trending Leaderboards
+          </li>
+          <li class="feature-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Discovery Telemetry
+          </li>
+        </ul>
+
+        <div class="card-actions-row" onclick="event.stopPropagation();">
+          <a href="topbump.html" class="btn btn-outline btn-sm">
+            Learn More →
+          </a>
+          <a href="https://topbump.lol" target="_blank" rel="noopener" class="btn btn-cyan btn-sm">
+            Visit topbump.lol ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Studio About Strip -->
+  <section class="studio-about-strip" id="about">
+    <div class="about-box">
+      <div class="about-logo-circle">
+        <img src="Logo.png" alt="LegendPrix Emblem">
+      </div>
+      <div class="about-details">
+        <h3 class="about-title">The LegendPrix AI Studio</h3>
+        <p class="about-text">
+          LegendPrix AI is an independent software and digital product studio founded by Alok Kumar Rathaur. We turn complex technical challenges into simple, elegant, and legendary products across macOS, iOS, and the modern web.
+        </p>
+      </div>
+      <a href="https://alokrathaur.github.io/portfolio" target="_blank" rel="noopener" class="btn btn-outline">
+        Meet the Founder ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="studio-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Logo.png" alt="LegendPrix AI" style="width: 24px; height: 24px; object-fit: contain;">
+        <span>LegendPrix AI</span>
+      </div>
+
+      <ul class="footer-nav-links">
+        <li><a href="#products">Flagship Suite</a></li>
+        <li><a href="macmint.html">MacMint</a></li>
+        <li><a href="dotmesh.html">DotMesh</a></li>
+        <li><a href="tinyorbiturl.html">TinyOrbit URL</a></li>
+        <li><a href="topbump.html">TopBump</a></li>
+        <li><a href="https://alokrathaur.github.io/portfolio" target="_blank" rel="noopener">Developer</a></li>
+      </ul>
+
+      <p class="footer-copy">
+        © 2026 LegendPrix AI (legendprixai.lol). Crafted with precision by 
+        <a href="https://alokrathaur.github.io/portfolio" target="_blank" rel="noopener">Alok Kumar Rathaur</a>.
+      </p>
+    </div>
+  </footer>
+
+  <!-- 3D Solar System & Realistic Earth Engine -->
+  <script src="js/space-globe.js"></script>
 
 </body>
 </html>
